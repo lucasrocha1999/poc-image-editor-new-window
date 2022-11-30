@@ -1,8 +1,7 @@
 import { useState } from "react";
 import NewWindow from "react-new-window";
-import ImageEditor from '@toast-ui/react-image-editor';
+import ImgEditor from "./components/ImgEditor";
 
-import 'tui-image-editor/dist/tui-image-editor.css';
 
 function App() {
   const [opened, setOpened] = useState(false);
@@ -25,38 +24,7 @@ function App() {
             onUnload={() => newWindowUnloaded()}
             features={{ left: 200, top: 200, width: 800, height: 800 }}
           >
-            <ImageEditor
-              includeUI={{
-                loadImage: {
-                  path: './assets/profile.jpeg',
-                  name: 'Profile',
-                },
-              }}           
-            />
-            {/* <ImageEditor
-              includeUI={{
-                loadImage: {
-                  path: './assets/profile.jpeg',
-                  name: 'Profile',
-                },
-                theme: {},
-                menu: ['shape', 'filter'],
-                initMenu: 'filter',
-                // uiSize: {
-                //   width: '1000px',
-                //   height: '700px',
-                // },
-                menuBarPosition: 'bottom',
-              }}
-              // cssMaxHeight={500}
-              // cssMaxWidth={700}
-              selectionStyle={{
-
-                cornerSize: 20,
-                rotatingPointOffset: 70,
-              }}
-              usageStatistics={true}
-            /> */}
+            <ImgEditor />
           </NewWindow>
         )}
     </>
